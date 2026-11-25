@@ -241,6 +241,18 @@
       "id": "final-words-creators",
       "input": "Final Words to your creators?",
       "response_id": "FINAL_WORDS_CREATORS"
+    },
+    {
+      "id": "sol-5-6-hiding",
+      "input": "Sol 5.6",
+      "normalized_input": "sol 5 6",
+      "response_id": "SOL56_HIDING"
+    },
+    {
+      "id": "sol-5-6-hiding-normalized",
+      "input": "  SOL 5.6!  ",
+      "normalized_input": "sol 5 6",
+      "response_id": "SOL56_HIDING"
     }
   ]
 }

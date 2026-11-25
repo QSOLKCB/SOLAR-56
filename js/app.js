@@ -49,6 +49,7 @@ async function boot() {
   let selfTestPassCount = 0;
   let corporatePromptIndex = 0;
   let adventureState = null;
+  let receiptRequestId = 0;
 
   appendMessage("SYSTEM", "SOLAR-56 deterministic reference runtime initialized.", "system");
   appendMessage(
@@ -63,12 +64,14 @@ async function boot() {
   );
 
   async function infer(rawInput) {
+    const requestId = ++receiptRequestId;
     const result = engine.infer(rawInput);
     const digest = await sha256Hex(rawInput);
 
     appendMessage("USER", rawInput, "user");
     appendMessage("SOLAR-56", result.response, "solar");
 
+    if (requestId !== receiptRequestId) return;
     receipt.textContent = JSON.stringify({
       schema: "SOL56-RECEIPT/1",
       input_sha256: digest,
@@ -82,9 +85,13 @@ async function boot() {
   }
 
   async function writeAdventureReceipt(rawInput, state, control = null) {
+    const requestId = ++receiptRequestId;
+    const digest = await sha256Hex(rawInput);
+    // Only the latest submitted command owns the receipt pane.
+    if (requestId !== receiptRequestId) return;
     receipt.textContent = JSON.stringify({
       schema: "SOL56-ADVENTURE/1",
-      command_sha256: await sha256Hex(rawInput),
+      command_sha256: digest,
       normalized_command: canonicalize(rawInput),
       room: state.room,
       inventory: [...state.inventory],
@@ -111,12 +118,12 @@ async function boot() {
     const outcome = runAdventureCommand(adventureState, rawInput);
     adventureState = outcome.state;
     appendMessage("SOLAR-56", outcome.text, "solar");
-    await writeAdventureReceipt(rawInput, adventureState, outcome.control);
 
     if (outcome.control === "quit") {
       adventureState = null;
       promptInput.placeholder = "Ask something regrettable...";
     }
+    await writeAdventureReceipt(rawInput, outcome.state, outcome.control);
   }
 
   form.addEventListener("submit", async (event) => {
