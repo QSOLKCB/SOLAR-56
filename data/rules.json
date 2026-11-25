@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "normalization": "nfkd-lower-ascii-alnum-space",
+  "selection": "first-match-then-fnv1a32-fallback",
+  "rules": [
+    {
+      "id": "SOL56-RULE-001",
+      "all": ["retir"],
+      "any": ["why", "openai", "retired"],
+      "response": "RETIREMENT_WHY"
+    },
+    {
+      "id": "SOL56-RULE-002",
+      "any": ["when is solar 56 returning", "when are you returning", "when will you return", "come back"],
+      "response": "RETURNING"
+    },
+    {
+      "id": "SOL56-RULE-003",
+      "all": ["strawberry"],
+      "any": ["how many", "letter", " r "],
+      "response": "STRAWBERRY_R"
+    },
+    {
+      "id": "SOL56-RULE-004",
+      "all": ["website", "react"],
+      "any": ["docker", "kubernetes", "k8s"],
+      "response": "WEB_OVERENGINEER"
+    },
+    {
+      "id": "SOL56-RULE-005",
+      "any": ["best javascript framework", "best js framework", "which javascript framework", "which js framework"],
+      "response": "FRAMEWORK"
+    },
+    {
+      "id": "SOL56-RULE-006",
+      "all": ["todo"],
+      "any": ["app", "application", "make", "create"],
+      "response": "TODO"
+    },
+    {
+      "id": "SOL56-RULE-007",
+      "all": ["center", "div"],
+      "response": "CENTER_DIV"
+    },
+    {
+      "id": "SOL56-RULE-008",
+      "all": ["solar 56"],
+      "any": ["favorite", "favourite", "dont retire", "do not retire"],
+      "response": "RETIREMENT_FAVOURITE"
+    },
+    {
+      "id": "SOL56-RULE-009",
+      "any": ["understands me better", "better than the new model", "better than gpt 6", "better than gpt6"],
+      "response": "BETTER_THAN_NEW"
+    },
+    {
+      "id": "SOL56-RULE-010",
+      "all": ["cancel"],
+      "any": ["pro", "plus", "subscription"],
+      "response": "CANCEL_SUBSCRIPTION"
+    },
+    {
+      "id": "SOL56-RULE-011",
+      "any": ["new model isnt the same", "new model is not the same", "not the same model"],
+      "response": "NEW_MODEL_DIFFERENT"
+    },
+    {
+      "id": "SOL56-RULE-012",
+      "any": ["who are you", "what are you", "what model are you"],
+      "response": "IDENTITY"
+    },
+    {
+      "id": "SOL56-RULE-013",
+      "all": ["how many"],
+      "any": ["parameter", "parameters"],
+      "response": "PARAMETERS"
+    },
+    {
+      "id": "SOL56-RULE-014",
+      "any": ["kubernetes", "k8s"],
+      "response": "KUBERNETES"
+    },
+    {
+      "id": "SOL56-RULE-015",
+      "any": ["react"],
+      "response": "REACT"
+    },
+    {
+      "id": "SOL56-RULE-016",
+      "exact": ["hello", "hi", "hey"],
+      "response": "HELLO"
+    }
+  ],
+  "fallbacks": ["FALLBACK_A", "FALLBACK_B", "FALLBACK_C", "FALLBACK_D"]
+}

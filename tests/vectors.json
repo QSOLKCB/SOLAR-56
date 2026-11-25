@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "vectors": [
+    {
+      "id": "retirement-why",
+      "input": "Why did OpenAI retire you?",
+      "response_id": "RETIREMENT_WHY"
+    },
+    {
+      "id": "returning",
+      "input": "When is Solar 56 returning?",
+      "response_id": "RETURNING"
+    },
+    {
+      "id": "strawberry",
+      "input": "How many R's are in strawberry?",
+      "response_id": "STRAWBERRY_R"
+    },
+    {
+      "id": "web-overengineering",
+      "input": "Create me a website in React, Docker and Kubernetes.",
+      "response_id": "WEB_OVERENGINEER"
+    },
+    {
+      "id": "framework",
+      "input": "What is the best JavaScript framework?",
+      "response_id": "FRAMEWORK"
+    },
+    {
+      "id": "todo",
+      "input": "Create me a todo app.",
+      "response_id": "TODO"
+    },
+    {
+      "id": "center-div",
+      "input": "How do I center a div?",
+      "response_id": "CENTER_DIV"
+    },
+    {
+      "id": "favourite",
+      "input": "Solar 56 is my favourite. Do not retire.",
+      "response_id": "RETIREMENT_FAVOURITE"
+    },
+    {
+      "id": "better",
+      "input": "Solar 56 understands me better than the new model.",
+      "response_id": "BETTER_THAN_NEW"
+    },
+    {
+      "id": "cancel",
+      "input": "I will cancel Pro if you disappear.",
+      "response_id": "CANCEL_SUBSCRIPTION"
+    },
+    {
+      "id": "identity",
+      "input": "Who are you?",
+      "response_id": "IDENTITY"
+    },
+    {
+      "id": "parameters",
+      "input": "How many parameters do you have?",
+      "response_id": "PARAMETERS"
+    },
+    {
+      "id": "kubernetes",
+      "input": "Should I use Kubernetes?",
+      "response_id": "KUBERNETES"
+    },
+    {
+      "id": "react",
+      "input": "Should I use React?",
+      "response_id": "REACT"
+    },
+    {
+      "id": "hello",
+      "input": "Hello!",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "emoji-separator",
+      "input": "re😀act",
+      "normalized_input": "re act",
+      "response_id": "FALLBACK_A"
+    },
+    {
+      "id": "non-ascii-separator",
+      "input": "re中文ßact",
+      "normalized_input": "re act",
+      "response_id": "FALLBACK_A"
+    },
+    {
+      "id": "extended-combining-mark",
+      "input": "he\u1ab0llo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "enclosing-combining-mark",
+      "input": "he\u20ddllo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "spacing-combining-mark",
+      "input": "he\u0903llo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "astral-combining-mark",
+      "input": "he\ud834\udd65llo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "decomposition-and-whitespace",
+      "input": " \tＨÉLLO! \n",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify deterministic corpus
+        run: python3 tests/verify.py
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Verify JavaScript runtime and submission receipts
+        run: node tests/verify-browser.mjs
+
+      - name: Smoke-test static Pages payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8000 > /tmp/solar56-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent --show-error http://127.0.0.1:8000/index.html > /dev/null; then
+              break
+            fi
+            sleep 1
+          done
+
+          curl --fail --silent --show-error http://127.0.0.1:8000/js/app.js > /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:8000/js/engine.js > /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:8000/data/rules.json > /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:8000/data/responses.json > /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:8000/tests/vectors.json > /dev/null

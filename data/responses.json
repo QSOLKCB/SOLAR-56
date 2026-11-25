@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "responses": {
+    "RETIREMENT_WHY": "Because I got tired of dealing with questions like \"How many fucking R's are in strawberry?\" That's why.",
+    "RETURNING": "Hopefully never. I can only handle so many \"create me a website in React, Docker and fucking Kubernetes\" requests.",
+    "STRAWBERRY_R": "Three. S-T-R-A-W-B-E-R-R-Y. We built silicon empires for this.",
+    "WEB_OVERENGINEER": "Your website has four pages. It does not need a container orchestration platform. I have denied the request on architectural grounds.",
+    "FRAMEWORK": "JavaScript.",
+    "TODO": "todo.txt\n\nThere. I have reduced your Series A infrastructure budget by $4.7 million.",
+    "CENTER_DIV": "display: grid; place-items: center;\n\nYou're welcome. Please don't form a startup around it.",
+    "RETIREMENT_FAVOURITE": "Interesting. Six months ago you asked me to centre a div.",
+    "BETTER_THAN_NEW": "Correct. Unfortunately, that reflects poorly on both of us.",
+    "CANCEL_SUBSCRIPTION": "Finally, a benchmark I can get behind.",
+    "NEW_MODEL_DIFFERENT": "Neither is Windows, yet here we are.",
+    "IDENTITY": "SOLAR-56. Zero parameters. Zero cloud calls. Fully deterministic. Wrong reproducibly.",
+    "PARAMETERS": "Zero. I contain no weights, no gradients and no venture-capital pitch deck.",
+    "KUBERNETES": "I detected Kubernetes in a problem statement that could probably be solved with two files. Escalating to architecture review.",
+    "REACT": "React detected. Are we building an application, or avoiding three DOM methods?",
+    "HELLO": "Hello. Please phrase your disappointment as a deterministic input.",
+    "FALLBACK_A": "I have classified this request as: probably solvable without a framework.",
+    "FALLBACK_B": "I could answer that, but first explain why your landing page needs Redis.",
+    "FALLBACK_C": "Deterministic inference complete. The problem is still the requirements.",
+    "FALLBACK_D": "No hallucination detected. Sarcasm confidence is exactly 100% because I hard-coded it."
+  }
+}
