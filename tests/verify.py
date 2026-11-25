@@ -18,9 +18,11 @@ def load_json(relative: str) -> dict:
 
 
 def canonicalize(value: str) -> str:
-    decomposed = unicodedata.normalize("NFKD", str(value))
-    ascii_only = decomposed.encode("ascii", "ignore").decode("ascii").lower()
-    cleaned = re.sub(r"[^a-z0-9]+", " ", ascii_only)
+    decomposed = unicodedata.normalize("NFKD", str(value)).lower()
+    without_marks = "".join(
+        char for char in decomposed if not unicodedata.category(char).startswith("M")
+    )
+    cleaned = re.sub(r"[^a-z0-9]+", " ", without_marks)
     return re.sub(r"\s+", " ", cleaned).strip()
 
 
@@ -98,6 +100,11 @@ def main() -> None:
         if vector["id"] in seen_vector_ids:
             fail(f"duplicate vector id {vector['id']}")
         seen_vector_ids.add(vector["id"])
+
+        if "normalized_input" in vector:
+            normalized = canonicalize(vector["input"])
+            if normalized != vector["normalized_input"]:
+                fail(f"{vector['id']}: unexpected normalized input {normalized!r}")
 
         rule_id, response_id = select(vector["input"], corpus)
         if response_id != vector["response_id"]:

@@ -41,8 +41,11 @@ No package installation is required.
 Run:
 
     python3 tests/verify.py
+    node tests/verify-browser.mjs
 
 The verifier independently checks rule integrity, response references, published vectors and repeated-inference stability.
+The JavaScript checks require Node.js 24 and cover the same vectors plus raw-input
+receipts and whitespace-only submissions through the app's submit handler.
 
 ## Architecture
 

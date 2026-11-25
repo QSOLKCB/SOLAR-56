@@ -72,8 +72,8 @@ async function boot() {
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const rawInput = promptInput.value.trim();
-    if (!rawInput) return;
+    const rawInput = promptInput.value;
+    if (!rawInput.trim()) return;
 
     promptInput.value = "";
     promptInput.focus();

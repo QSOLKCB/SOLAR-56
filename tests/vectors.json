@@ -75,6 +75,48 @@
       "id": "hello",
       "input": "Hello!",
       "response_id": "HELLO"
+    },
+    {
+      "id": "emoji-separator",
+      "input": "re😀act",
+      "normalized_input": "re act",
+      "response_id": "FALLBACK_A"
+    },
+    {
+      "id": "non-ascii-separator",
+      "input": "re中文ßact",
+      "normalized_input": "re act",
+      "response_id": "FALLBACK_A"
+    },
+    {
+      "id": "extended-combining-mark",
+      "input": "he\u1ab0llo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "enclosing-combining-mark",
+      "input": "he\u20ddllo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "spacing-combining-mark",
+      "input": "he\u0903llo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "astral-combining-mark",
+      "input": "he\ud834\udd65llo",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
+    },
+    {
+      "id": "decomposition-and-whitespace",
+      "input": " \tＨÉLLO! \n",
+      "normalized_input": "hello",
+      "response_id": "HELLO"
     }
   ]
 }

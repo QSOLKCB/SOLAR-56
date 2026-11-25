@@ -17,6 +17,14 @@ jobs:
       - name: Verify deterministic corpus
         run: python3 tests/verify.py
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Verify JavaScript runtime and submission receipts
+        run: node tests/verify-browser.mjs
+
       - name: Smoke-test static Pages payload
         shell: bash
         run: |
