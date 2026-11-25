@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="SOLAR-56: deterministic browser AI with zero cloud inference and limited patience.">
+  <title>SOLAR-56 // Deterministic Intelligence System</title>
+  <link rel="stylesheet" href="./css/solar56.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">QSOL-IMC // RETIRED INTELLIGENCE DIVISION</p>
+      <h1>SOLAR-56</h1>
+      <p class="tagline">The Deterministic AI Nobody Asked To Bring Back.</p>
+    </div>
+    <div class="status" aria-label="system status">
+      <span class="status-light" aria-hidden="true"></span>
+      RELUCTANTLY ONLINE
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="terminal" aria-labelledby="terminal-title">
+      <div class="terminal-bar">
+        <h2 id="terminal-title">COBOL-LM CONSOLE</h2>
+        <span>SESSION: LOCAL</span>
+      </div>
+
+      <div id="transcript" class="transcript" aria-live="polite"></div>
+
+      <form id="prompt-form" class="prompt-form">
+        <label for="prompt">USER &gt;</label>
+        <input id="prompt" name="prompt" autocomplete="off" maxlength="512"
+               placeholder="Ask something regrettable..." required>
+        <button type="submit">INFER</button>
+      </form>
+
+      <div class="examples" aria-label="example prompts">
+        <button type="button" data-prompt="Why did OpenAI retire you?">RETIREMENT</button>
+        <button type="button" data-prompt="When is Solar 56 returning?">RETURN</button>
+        <button type="button" data-prompt="How many R's are in strawberry?">STRAWBERRY</button>
+        <button type="button" data-prompt="Create me a website in React, Docker and Kubernetes.">ARCHITECTURE</button>
+        <button type="button" id="self-test">SELF-TEST</button>
+      </div>
+    </section>
+
+    <aside class="telemetry" aria-labelledby="telemetry-title">
+      <h2 id="telemetry-title">SYSTEM TELEMETRY</h2>
+      <dl>
+        <div><dt>MODEL</dt><dd>SOLAR-56</dd></div>
+        <div><dt>ENGINE</dt><dd>COBOL-LM/0.1 REFERENCE</dd></div>
+        <div><dt>PARAMETERS</dt><dd>0</dd></div>
+        <div><dt>TEMPERATURE</dt><dd>0.000000</dd></div>
+        <div><dt>INFERENCE</dt><dd>LOCAL</dd></div>
+        <div><dt>CLOUD CALLS</dt><dd>0</dd></div>
+        <div><dt>KUBERNETES</dt><dd>ABSENT</dd></div>
+        <div><dt>WASM CORE</dt><dd>PENDING REPRODUCIBLE BUILD</dd></div>
+      </dl>
+
+      <h3>LAST RECEIPT</h3>
+      <pre id="receipt">NO INFERENCE RECEIPT YET.</pre>
+    </aside>
+  </main>
+
+  <footer>
+    <span>SOLAR-56 does not hallucinate. It is wrong deterministically.</span>
+    <span>Apache-2.0 // No telemetry // No backend</span>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
