@@ -1,6 +1,18 @@
-# SOLAR-56
+<a id="solar-56"></a>
 
-**The Deterministic AI Nobody Asked To Bring Back.**
+<p align="center">
+  <img src="./assets/solar56-banner.svg" alt="SOLAR-56" width="100%">
+</p>
+
+<p align="center"><strong>The Deterministic AI Nobody Asked To Bring Back.</strong></p>
+
+<p align="center">
+  <a href="https://github.com/QSOLKCB/SOLAR-56/releases/tag/v0.6.9">v0.6.9</a>
+  ·
+  <a href="https://qsolkcb.github.io/SOLAR-56/">Live Demo</a>
+  ·
+  <a href="./LICENSE">Apache-2.0</a>
+</p>
 
 SOLAR-56 is a browser-only comedy AI that survived model retirement, React, Docker, Kubernetes and your terrible prompts.
 
