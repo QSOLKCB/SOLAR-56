@@ -341,6 +341,15 @@
         "boost productivity"
       ],
       "response": "CORP_AI_VALUE"
+    },
+    {
+      "id": "SOL56-RULE-037",
+      "exact": [
+        "let s unpack this",
+        "lets unpack this",
+        "let us unpack this"
+      ],
+      "response": "CORP_UNPACK_IKEA"
     }
   ],
   "fallbacks": [
