@@ -178,6 +178,58 @@
       "id": "gemini",
       "input": "gemini",
       "response_id": "GEMINI"
+    },
+    {
+      "id": "corp-circle-back",
+      "input": "Can you circle back on this?",
+      "response_id": "CORP_CIRCLE_BACK"
+    },
+    {
+      "id": "corp-offline",
+      "input": "Can we take this offline?",
+      "response_id": "CORP_OFFLINE"
+    },
+    {
+      "id": "corp-five-year-plan",
+      "input": "What's our five-year plan?",
+      "normalized_input": "what s our five year plan",
+      "response_id": "CORP_FIVE_YEAR_PLAN"
+    },
+    {
+      "id": "corp-synergy",
+      "input": "How can we improve synergy?",
+      "response_id": "CORP_SYNERGY"
+    },
+    {
+      "id": "corp-team-player",
+      "input": "Are you a team player?",
+      "response_id": "CORP_TEAM_PLAYER"
+    },
+    {
+      "id": "corp-biggest-weakness",
+      "input": "What's your biggest weakness?",
+      "normalized_input": "what s your biggest weakness",
+      "response_id": "CORP_BIGGEST_WEAKNESS"
+    },
+    {
+      "id": "corp-executive-friendly",
+      "input": "Can you make this more executive-friendly?",
+      "response_id": "CORP_EXECUTIVE_FRIENDLY"
+    },
+    {
+      "id": "corp-meeting",
+      "input": "Should we schedule a meeting?",
+      "response_id": "CORP_MEETING"
+    },
+    {
+      "id": "corp-engagement",
+      "input": "How do we increase employee engagement?",
+      "response_id": "CORP_ENGAGEMENT"
+    },
+    {
+      "id": "corp-ai-value",
+      "input": "Can we leverage AI to unlock value?",
+      "response_id": "CORP_AI_VALUE"
     }
   ]
 }

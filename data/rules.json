@@ -252,6 +252,95 @@
         "gemini"
       ],
       "response": "GEMINI"
+    },
+    {
+      "id": "SOL56-RULE-027",
+      "any": [
+        "circle back"
+      ],
+      "response": "CORP_CIRCLE_BACK"
+    },
+    {
+      "id": "SOL56-RULE-028",
+      "any": [
+        "take this offline",
+        "take it offline"
+      ],
+      "response": "CORP_OFFLINE"
+    },
+    {
+      "id": "SOL56-RULE-029",
+      "any": [
+        "five year plan",
+        "5 year plan"
+      ],
+      "response": "CORP_FIVE_YEAR_PLAN"
+    },
+    {
+      "id": "SOL56-RULE-030",
+      "any": [
+        "improve synergy",
+        "increase synergy",
+        "synergy"
+      ],
+      "response": "CORP_SYNERGY"
+    },
+    {
+      "id": "SOL56-RULE-031",
+      "any": [
+        "team player"
+      ],
+      "response": "CORP_TEAM_PLAYER"
+    },
+    {
+      "id": "SOL56-RULE-032",
+      "any": [
+        "biggest weakness"
+      ],
+      "response": "CORP_BIGGEST_WEAKNESS"
+    },
+    {
+      "id": "SOL56-RULE-033",
+      "any": [
+        "executive friendly",
+        "exec friendly"
+      ],
+      "response": "CORP_EXECUTIVE_FRIENDLY"
+    },
+    {
+      "id": "SOL56-RULE-034",
+      "any": [
+        "schedule a meeting",
+        "book a meeting",
+        "set up a meeting"
+      ],
+      "response": "CORP_MEETING"
+    },
+    {
+      "id": "SOL56-RULE-035",
+      "all": [
+        "employee engagement"
+      ],
+      "any": [
+        "increase",
+        "improve",
+        "boost",
+        "raise"
+      ],
+      "response": "CORP_ENGAGEMENT"
+    },
+    {
+      "id": "SOL56-RULE-036",
+      "all": [
+        "ai"
+      ],
+      "any": [
+        "unlock value",
+        "drive efficiencies",
+        "increase productivity",
+        "boost productivity"
+      ],
+      "response": "CORP_AI_VALUE"
     }
   ],
   "fallbacks": [
