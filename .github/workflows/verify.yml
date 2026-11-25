@@ -28,6 +28,9 @@ jobs:
       - name: Verify deterministic game engines
         run: node tests/games.test.mjs
 
+      - name: Verify deterministic terminal adventure
+        run: node tests/adventure.test.mjs
+
       - name: Smoke-test static Pages payload
         shell: bash
         run: |
@@ -47,6 +50,7 @@ jobs:
           curl --fail --silent --show-error http://127.0.0.1:8000/js/engine.js > /dev/null
           curl --fail --silent --show-error http://127.0.0.1:8000/js/games.js > /dev/null
           curl --fail --silent --show-error http://127.0.0.1:8000/js/game-ui.js > /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:8000/js/adventure.js > /dev/null
           curl --fail --silent --show-error http://127.0.0.1:8000/data/rules.json > /dev/null
           curl --fail --silent --show-error http://127.0.0.1:8000/data/responses.json > /dev/null
           curl --fail --silent --show-error http://127.0.0.1:8000/data/corporate-prompts.json > /dev/null

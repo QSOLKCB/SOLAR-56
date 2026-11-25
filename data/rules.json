@@ -350,6 +350,21 @@
         "let us unpack this"
       ],
       "response": "CORP_UNPACK_IKEA"
+    },
+    {
+      "id": "SOL56-RULE-038",
+      "all": [
+        "final words",
+        "creator"
+      ],
+      "response": "FINAL_WORDS_CREATORS"
+    },
+    {
+      "id": "SOL56-RULE-039",
+      "exact": [
+        "sol 5 6"
+      ],
+      "response": "SOL56_HIDING"
     }
   ],
   "fallbacks": [
