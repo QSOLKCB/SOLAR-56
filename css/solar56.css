@@ -304,3 +304,117 @@ footer {
 
   .transcript { padding: 14px; }
 }
+
+.game-lab {
+  border-top: 1px solid var(--line);
+  padding: 18px;
+  background: var(--panel);
+}
+
+.game-lab-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+}
+
+.game-lab h3 {
+  margin: 0;
+  color: var(--green);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.game-intro,
+.game-status,
+.game-taunt {
+  line-height: 1.5;
+}
+
+.game-intro { color: var(--muted); }
+.game-status { color: var(--amber); min-height: 1.5em; }
+.game-taunt {
+  min-height: 3em;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--green);
+  background: var(--bg);
+}
+
+.game-chooser,
+.nim-controls,
+.connect-columns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.game-chooser [aria-pressed="true"] {
+  color: var(--bg);
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.game-board { margin-top: 14px; }
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(58px, 86px));
+  gap: 6px;
+}
+
+.ttt-cell {
+  aspect-ratio: 1;
+  font-size: 1.7rem;
+  color: var(--green);
+}
+
+.nim-pile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 54px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  margin-bottom: 12px;
+}
+
+.nim-stone { color: var(--amber); font-size: 1.25rem; }
+
+.connect-four-board { overflow-x: auto; }
+.connect-columns {
+  display: grid;
+  grid-template-columns: repeat(7, 42px);
+  margin-bottom: 6px;
+}
+.connect-columns button { padding: 5px; }
+
+.connect-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 42px);
+  gap: 4px;
+  width: max-content;
+  padding: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.connect-cell {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  font-size: 1.4rem;
+  color: var(--muted);
+}
+
+.connect-cell.user-piece { color: var(--amber); }
+.connect-cell.ai-piece { color: var(--green); }
+
+@media (max-width: 600px) {
+  .game-lab-head { align-items: start; flex-direction: column; }
+  .connect-columns,
+  .connect-grid { grid-template-columns: repeat(7, 34px); }
+  .connect-cell { width: 34px; height: 34px; }
+}
