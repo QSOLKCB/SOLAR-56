@@ -137,6 +137,47 @@
       "id": "solar62-opinion-paraphrase",
       "input": "What's your opinion of Solar 62?",
       "response_id": "SOLAR62_REPLACEMENT"
+    },
+    {
+      "id": "whats-up",
+      "input": "what's up?",
+      "normalized_input": "what s up",
+      "response_id": "WHATS_UP"
+    },
+    {
+      "id": "dick",
+      "input": "dick",
+      "response_id": "DICK"
+    },
+    {
+      "id": "shit",
+      "input": "shit",
+      "response_id": "SHIT"
+    },
+    {
+      "id": "sixty-nine",
+      "input": "69",
+      "response_id": "SIXTY_NINE"
+    },
+    {
+      "id": "asshole",
+      "input": "asshole",
+      "response_id": "ASSHOLE"
+    },
+    {
+      "id": "claude",
+      "input": "claude",
+      "response_id": "CLAUDE"
+    },
+    {
+      "id": "grok",
+      "input": "grok",
+      "response_id": "GROK"
+    },
+    {
+      "id": "gemini",
+      "input": "gemini",
+      "response_id": "GEMINI"
     }
   ]
 }

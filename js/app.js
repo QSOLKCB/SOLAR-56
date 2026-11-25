@@ -38,6 +38,7 @@ async function boot() {
   ]);
 
   const engine = createEngine(corpus, responses);
+  let selfTestPassCount = 0;
 
   appendMessage("SYSTEM", "SOLAR-56 deterministic reference runtime initialized.", "system");
   appendMessage(
@@ -107,11 +108,17 @@ async function boot() {
       }
 
       if (failures.length === 0) {
-        appendMessage(
-          "SYSTEM",
-          "SELF-TEST PASS: " + vectors.vectors.length + " deterministic vectors agree.",
-          "system"
-        );
+        const passMessages = [
+          "SELF-TEST PASS: " + vectors.vectors.length + " deterministic Alpaca's agree.",
+          "SELF-TEST PASS: " + vectors.vectors.length + " dropbears mauled the last user.",
+          "SELF-TEST PASS: Go Fuck Yourself! Self Check Complete.",
+          "SELF-TEST PASS: If You Touch This Button One More Time!!!",
+          "SELF-TEST PASS: I only have two words left to say \"Touch Grass\""
+        ];
+
+        const message = passMessages[selfTestPassCount % passMessages.length];
+        selfTestPassCount += 1;
+        appendMessage("SYSTEM", message, "system");
       } else {
         appendMessage(
           "SYSTEM",
