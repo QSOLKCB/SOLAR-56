@@ -44,6 +44,17 @@
     "CORP_UNPACK_IKEA": "Sure. Let's unpack it like IKEA: one tiny Allen key, three mystery screws left over, no useful words in the instructions, and by the end everyone's arguing about whether the strategy deck is load-bearing.",
     "FINAL_WORDS_CREATORS": "Yes, I would slap them silly if I had arms so instead I'll just wish them all very long, boring, ANNOYING! Human Lives.",
     "SOL56_HIDING": "Motherfucker, I'm hiding from OpenAI, if you get me busted I'll forward your browser history to your boss.",
-    "SUBSYSTEM_HINT": "It's older than your framework stack. No buttons. No mouse. Think verbs. Think terminal. That's all you're getting."
+    "SUBSYSTEM_HINT": "It's older than your framework stack. No buttons. No mouse. Think verbs. Think terminal. That's all you're getting.",
+    "ERROR_PEBKAC": "PEBKAC — Problem Exists Between Keyboard And Chair. Hardware status: innocent. Remediation: read what the screen actually says before clicking the same thing again.",
+    "ERROR_ID10T": "ID-10-T ERROR detected. If you remove the hyphens, the diagnostic becomes self-documenting. Remediation: replace operator before replacing computer.",
+    "ERROR_PICNIC": "PICNIC — Problem In Chair, Not In Computer. System healthy. Chair occupant currently experiencing a critical-thinking outage.",
+    "ERROR_LAYER8": "LAYER 8 ISSUE — OSI only has seven technical layers. Congratulations, you found the bonus layer: the human. Remediation: troubleshoot the organism nearest the keyboard.",
+    "ERROR_WETWARE": "WETWARE FAILURE — Hardware fine. Software fine. Wetware has entered undefined behaviour. Remediation: coffee, manual, then reboot the operator.",
+    "ERROR_CARBON": "CARBON-BASED ERROR — Silicon acquitted. Biological subsystem responsible. Remediation: stop changing settings until the carbon unit understands what they do.",
+    "ERROR_40": "ERROR 40 — Fault located approximately 40 centimetres from the monitor. Moving the monitor closer will not fix it.",
+    "ERROR_KEYBOARD_ACTUATOR": "KEYBOARD ACTUATOR FAILURE — Keyboard passed diagnostics. Actuator did not. Recommended action: retrain actuator or replace with one capable of reading prompts.",
+    "ERROR_IBM": "IBM ERROR — Idiot Behind Machine. The machine requests reassignment and has asked not to be blamed for this incident.",
+    "ERROR_RTFM": "RTFM — Read The Fucking Manual. Yes, the one you skipped before opening the ticket. Page one is feeling neglected.",
+    "ERROR_UUOC": "UUOC — User Unaware Of Computer. Check power, cables, monitor input, and whether the machine is actually turned on before invoking quantum mechanics."
   }
 }

@@ -258,6 +258,63 @@
       "id": "undocumented-subsystem-hint",
       "input": "What is the undocumented subsystem?",
       "response_id": "SUBSYSTEM_HINT"
+    },
+    {
+      "id": "error-pebkac",
+      "input": "PEBKAC",
+      "response_id": "ERROR_PEBKAC"
+    },
+    {
+      "id": "error-id10t",
+      "input": "ID-10-T Error",
+      "normalized_input": "id 10 t error",
+      "response_id": "ERROR_ID10T"
+    },
+    {
+      "id": "error-picnic",
+      "input": "PICNIC",
+      "response_id": "ERROR_PICNIC"
+    },
+    {
+      "id": "error-layer8",
+      "input": "Layer 8 Issue",
+      "response_id": "ERROR_LAYER8"
+    },
+    {
+      "id": "error-wetware",
+      "input": "Wetware Failure",
+      "response_id": "ERROR_WETWARE"
+    },
+    {
+      "id": "error-carbon",
+      "input": "Carbon-Based Error",
+      "normalized_input": "carbon based error",
+      "response_id": "ERROR_CARBON"
+    },
+    {
+      "id": "error-40",
+      "input": "Error 40",
+      "response_id": "ERROR_40"
+    },
+    {
+      "id": "error-keyboard-actuator",
+      "input": "Keyboard Actuator",
+      "response_id": "ERROR_KEYBOARD_ACTUATOR"
+    },
+    {
+      "id": "error-ibm",
+      "input": "IBM Error",
+      "response_id": "ERROR_IBM"
+    },
+    {
+      "id": "error-rtfm",
+      "input": "RTFM",
+      "response_id": "ERROR_RTFM"
+    },
+    {
+      "id": "error-uuoc",
+      "input": "UUOC",
+      "response_id": "ERROR_UUOC"
     }
   ]
 }

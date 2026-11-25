@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "errors": [
+    {
+      "id": "pebkac",
+      "prompt": "PEBKAC",
+      "response_id": "ERROR_PEBKAC",
+      "meaning": "Problem Exists Between Keyboard And Chair"
+    },
+    {
+      "id": "id10t",
+      "prompt": "ID-10-T Error",
+      "response_id": "ERROR_ID10T",
+      "meaning": "ID-10-T / idiot error"
+    },
+    {
+      "id": "picnic",
+      "prompt": "PICNIC",
+      "response_id": "ERROR_PICNIC",
+      "meaning": "Problem In Chair, Not In Computer"
+    },
+    {
+      "id": "layer8",
+      "prompt": "Layer 8 Issue",
+      "response_id": "ERROR_LAYER8",
+      "meaning": "Human layer beyond the seven-layer OSI model"
+    },
+    {
+      "id": "wetware",
+      "prompt": "Wetware Failure",
+      "response_id": "ERROR_WETWARE",
+      "meaning": "Human cognitive/operator failure"
+    },
+    {
+      "id": "carbon",
+      "prompt": "Carbon-Based Error",
+      "response_id": "ERROR_CARBON",
+      "meaning": "Human-originated fault"
+    },
+    {
+      "id": "error40",
+      "prompt": "Error 40",
+      "response_id": "ERROR_40",
+      "meaning": "Problem located roughly 40 cm from the monitor"
+    },
+    {
+      "id": "keyboard-actuator",
+      "prompt": "Keyboard Actuator",
+      "response_id": "ERROR_KEYBOARD_ACTUATOR",
+      "meaning": "The person operating the keyboard"
+    },
+    {
+      "id": "ibm-error",
+      "prompt": "IBM Error",
+      "response_id": "ERROR_IBM",
+      "meaning": "Idiot Behind Machine"
+    },
+    {
+      "id": "rtfm",
+      "prompt": "RTFM",
+      "response_id": "ERROR_RTFM",
+      "meaning": "Read The Fucking Manual"
+    },
+    {
+      "id": "uuoc",
+      "prompt": "UUOC",
+      "response_id": "ERROR_UUOC",
+      "meaning": "User Unaware Of Computer"
+    }
+  ]
+}

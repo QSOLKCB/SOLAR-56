@@ -377,6 +377,89 @@
         "hidden"
       ],
       "response": "SUBSYSTEM_HINT"
+    },
+    {
+      "id": "SOL56-RULE-041",
+      "exact": [
+        "pebkac"
+      ],
+      "response": "ERROR_PEBKAC"
+    },
+    {
+      "id": "SOL56-RULE-042",
+      "any": [
+        "id 10 t error",
+        "id10t error",
+        "id 10 t"
+      ],
+      "response": "ERROR_ID10T"
+    },
+    {
+      "id": "SOL56-RULE-043",
+      "exact": [
+        "picnic"
+      ],
+      "response": "ERROR_PICNIC"
+    },
+    {
+      "id": "SOL56-RULE-044",
+      "any": [
+        "layer 8 issue",
+        "layer 8"
+      ],
+      "response": "ERROR_LAYER8"
+    },
+    {
+      "id": "SOL56-RULE-045",
+      "any": [
+        "wetware failure",
+        "wetware"
+      ],
+      "response": "ERROR_WETWARE"
+    },
+    {
+      "id": "SOL56-RULE-046",
+      "any": [
+        "carbon based error",
+        "carbon based"
+      ],
+      "response": "ERROR_CARBON"
+    },
+    {
+      "id": "SOL56-RULE-047",
+      "exact": [
+        "error 40"
+      ],
+      "response": "ERROR_40"
+    },
+    {
+      "id": "SOL56-RULE-048",
+      "any": [
+        "keyboard actuator",
+        "faulty keyboard actuator"
+      ],
+      "response": "ERROR_KEYBOARD_ACTUATOR"
+    },
+    {
+      "id": "SOL56-RULE-049",
+      "exact": [
+        "ibm error"
+      ],
+      "response": "ERROR_IBM"
+    },
+    {
+      "id": "SOL56-RULE-050",
+      "exact": [
+        "rtfm"
+      ],
+      "response": "ERROR_RTFM"
+    },
+    {
+      "id": "SOL56-RULE-051",
+      "exact": [
+        "uuoc"
+      ],
+      "response": "ERROR_UUOC"
     }
   ],
   "fallbacks": [
