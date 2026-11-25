@@ -230,6 +230,12 @@
       "id": "corp-ai-value",
       "input": "Can we leverage AI to unlock value?",
       "response_id": "CORP_AI_VALUE"
+    },
+    {
+      "id": "corp-unpack-ikea",
+      "input": "Let's unpack this",
+      "normalized_input": "let s unpack this",
+      "response_id": "CORP_UNPACK_IKEA"
     }
   ]
 }

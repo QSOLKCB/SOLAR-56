@@ -5,6 +5,7 @@ const form = document.querySelector("#prompt-form");
 const promptInput = document.querySelector("#prompt");
 const receipt = document.querySelector("#receipt");
 const selfTestButton = document.querySelector("#self-test");
+const totalAssholeButton = document.querySelector("#total-asshole");
 
 function appendMessage(role, body, className = "") {
   const row = document.createElement("div");
@@ -32,13 +33,15 @@ async function loadJson(path) {
 }
 
 async function boot() {
-  const [corpus, responses] = await Promise.all([
+  const [corpus, responses, corporateDeck] = await Promise.all([
     loadJson("./data/rules.json"),
-    loadJson("./data/responses.json")
+    loadJson("./data/responses.json"),
+    loadJson("./data/corporate-prompts.json")
   ]);
 
   const engine = createEngine(corpus, responses);
   let selfTestPassCount = 0;
+  let corporatePromptIndex = 0;
 
   appendMessage("SYSTEM", "SOLAR-56 deterministic reference runtime initialized.", "system");
   appendMessage(
@@ -92,6 +95,25 @@ async function boot() {
       form.requestSubmit();
     });
   });
+
+  function updateTotalAssholeLabel() {
+    const next = (corporatePromptIndex % corporateDeck.prompts.length) + 1;
+    totalAssholeButton.textContent = "TOTAL ASSHOLE " + next + "/" + corporateDeck.prompts.length;
+    totalAssholeButton.setAttribute(
+      "aria-label",
+      "Run corporate prompt " + next + " of " + corporateDeck.prompts.length
+    );
+  }
+
+  totalAssholeButton.addEventListener("click", () => {
+    const item = corporateDeck.prompts[corporatePromptIndex % corporateDeck.prompts.length];
+    corporatePromptIndex += 1;
+    promptInput.value = item.prompt;
+    updateTotalAssholeLabel();
+    form.requestSubmit();
+  });
+
+  updateTotalAssholeLabel();
 
   selfTestButton.addEventListener("click", async () => {
     try {

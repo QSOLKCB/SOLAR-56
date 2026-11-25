@@ -73,6 +73,7 @@ def main() -> None:
     corpus = load_json("data/rules.json")
     responses = load_json("data/responses.json")["responses"]
     vectors = load_json("tests/vectors.json")["vectors"]
+    corporate_prompts = load_json("data/corporate-prompts.json")["prompts"]
 
     if corpus.get("schema") != 1:
         fail("rules schema must be 1")
@@ -117,11 +118,30 @@ def main() -> None:
         if second != (rule_id, response_id):
             fail(f"{vector['id']}: repeated inference changed result")
 
+    if len(corporate_prompts) != 10:
+        fail(f"corporate prompt deck must contain 10 prompts, got {len(corporate_prompts)}")
+
+    corporate_response_ids: set[str] = set()
+    for item in corporate_prompts:
+        if item["response_id"] in corporate_response_ids:
+            fail(f"corporate prompt deck reuses response {item['response_id']}")
+        corporate_response_ids.add(item["response_id"])
+
+        rule_id, response_id = select(item["prompt"], corpus)
+        if response_id != item["response_id"]:
+            fail(
+                f"{item['id']}: expected {item['response_id']}, "
+                f"got {response_id} via {rule_id}"
+            )
+        if not response_id.startswith("CORP_"):
+            fail(f"{item['id']}: non-corporate response {response_id}")
+
     print(
         "PASS:",
         f"{len(corpus['rules'])} rules,",
         f"{len(responses)} responses,",
         f"{len(vectors)} vectors,",
+        f"{len(corporate_prompts)} corporate prompts,",
         "deterministic replay confirmed",
     )
 
