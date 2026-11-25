@@ -54,6 +54,12 @@ globalThis.fetch = async (path) => ({ ok: true, json: () => loadJson(path) });
 await import("../js/app.js");
 await ready;
 
+const bootText = elements.get("#transcript").children
+  .map((row) => row.children[1].textContent)
+  .join("\n");
+assert.match(bootText, /1 UNDOCUMENTED SUBSYSTEM DETECTED/);
+assert.match(bootText, /Don't worry about it\./);
+
 const prompt = elements.get("#prompt");
 const receipt = elements.get("#receipt");
 const transcript = elements.get("#transcript");
