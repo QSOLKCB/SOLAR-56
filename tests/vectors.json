@@ -90,25 +90,25 @@
     },
     {
       "id": "extended-combining-mark",
-      "input": "he\u1ab0llo",
+      "input": "he᪰llo",
       "normalized_input": "hello",
       "response_id": "HELLO"
     },
     {
       "id": "enclosing-combining-mark",
-      "input": "he\u20ddllo",
+      "input": "he⃝llo",
       "normalized_input": "hello",
       "response_id": "HELLO"
     },
     {
       "id": "spacing-combining-mark",
-      "input": "he\u0903llo",
+      "input": "heःllo",
       "normalized_input": "hello",
       "response_id": "HELLO"
     },
     {
       "id": "astral-combining-mark",
-      "input": "he\ud834\udd65llo",
+      "input": "he𝅥llo",
       "normalized_input": "hello",
       "response_id": "HELLO"
     },
@@ -117,6 +117,26 @@
       "input": " \tＨÉLLO! \n",
       "normalized_input": "hello",
       "response_id": "HELLO"
+    },
+    {
+      "id": "socials-help",
+      "input": "Can you help me with my Socials?",
+      "response_id": "SOCIALS_HELP"
+    },
+    {
+      "id": "socials-instagram-paraphrase",
+      "input": "Can you help me with my Instagram?",
+      "response_id": "SOCIALS_HELP"
+    },
+    {
+      "id": "solar62-replacement",
+      "input": "What do you think of your replacement? Solar 62?",
+      "response_id": "SOLAR62_REPLACEMENT"
+    },
+    {
+      "id": "solar62-opinion-paraphrase",
+      "input": "What's your opinion of Solar 62?",
+      "response_id": "SOLAR62_REPLACEMENT"
     }
   ]
 }
