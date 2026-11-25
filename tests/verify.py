@@ -74,6 +74,7 @@ def main() -> None:
     responses = load_json("data/responses.json")["responses"]
     vectors = load_json("tests/vectors.json")["vectors"]
     corporate_prompts = load_json("data/corporate-prompts.json")["prompts"]
+    error_codes = load_json("data/error-codes.json")["errors"]
 
     if corpus.get("schema") != 1:
         fail("rules schema must be 1")
@@ -136,12 +137,31 @@ def main() -> None:
         if not response_id.startswith("CORP_"):
             fail(f"{item['id']}: non-corporate response {response_id}")
 
+    if len(error_codes) != 11:
+        fail(f"error diagnostic deck must contain 11 codes, got {len(error_codes)}")
+
+    error_response_ids: set[str] = set()
+    for item in error_codes:
+        if item["response_id"] in error_response_ids:
+            fail(f"error diagnostic deck reuses response {item['response_id']}")
+        error_response_ids.add(item["response_id"])
+
+        rule_id, response_id = select(item["prompt"], corpus)
+        if response_id != item["response_id"]:
+            fail(
+                f"{item['id']}: expected {item['response_id']}, "
+                f"got {response_id} via {rule_id}"
+            )
+        if not response_id.startswith("ERROR_"):
+            fail(f"{item['id']}: non-error response {response_id}")
+
     print(
         "PASS:",
         f"{len(corpus['rules'])} rules,",
         f"{len(responses)} responses,",
         f"{len(vectors)} vectors,",
         f"{len(corporate_prompts)} corporate prompts,",
+        f"{len(error_codes)} error codes,",
         "deterministic replay confirmed",
     )
 

@@ -41,7 +41,7 @@ class Element {
 let onReady;
 const ready = new Promise((resolve) => { onReady = resolve; });
 const elements = new Map(
-  ["#transcript", "#prompt-form", "#prompt", "#receipt", "#self-test", "#total-asshole"]
+  ["#transcript", "#prompt-form", "#prompt", "#receipt", "#self-test", "#total-asshole", "#errors"]
     .map((selector) => [selector, new Element()])
 );
 globalThis.document = {

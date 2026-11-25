@@ -8,6 +8,7 @@ const promptInput = document.querySelector("#prompt");
 const receipt = document.querySelector("#receipt");
 const selfTestButton = document.querySelector("#self-test");
 const totalAssholeButton = document.querySelector("#total-asshole");
+const errorsButton = document.querySelector("#errors");
 
 function appendMessage(role, body, className = "") {
   const row = document.createElement("div");
@@ -35,10 +36,11 @@ async function loadJson(path) {
 }
 
 async function boot() {
-  const [corpus, responses, corporateDeck] = await Promise.all([
+  const [corpus, responses, corporateDeck, errorDeck] = await Promise.all([
     loadJson("./data/rules.json"),
     loadJson("./data/responses.json"),
-    loadJson("./data/corporate-prompts.json")
+    loadJson("./data/corporate-prompts.json"),
+    loadJson("./data/error-codes.json")
   ]);
 
   const engine = createEngine(corpus, responses);
@@ -48,6 +50,7 @@ async function boot() {
   });
   let selfTestPassCount = 0;
   let corporatePromptIndex = 0;
+  let errorPromptIndex = 0;
   let adventureState = null;
   let receiptRequestId = 0;
 
@@ -182,6 +185,25 @@ async function boot() {
   });
 
   updateTotalAssholeLabel();
+
+  function updateErrorsLabel() {
+    const next = (errorPromptIndex % errorDeck.errors.length) + 1;
+    errorsButton.textContent = "ERRORS " + next + "/" + errorDeck.errors.length;
+    errorsButton.setAttribute(
+      "aria-label",
+      "Run error diagnostic " + next + " of " + errorDeck.errors.length
+    );
+  }
+
+  errorsButton.addEventListener("click", () => {
+    const item = errorDeck.errors[errorPromptIndex % errorDeck.errors.length];
+    errorPromptIndex += 1;
+    promptInput.value = item.prompt;
+    updateErrorsLabel();
+    form.requestSubmit();
+  });
+
+  updateErrorsLabel();
 
   selfTestButton.addEventListener("click", async () => {
     try {
