@@ -195,6 +195,63 @@
         "opinion"
       ],
       "response": "SOLAR62_REPLACEMENT"
+    },
+    {
+      "id": "SOL56-RULE-019",
+      "exact": [
+        "what s up",
+        "whats up"
+      ],
+      "response": "WHATS_UP"
+    },
+    {
+      "id": "SOL56-RULE-020",
+      "exact": [
+        "dick"
+      ],
+      "response": "DICK"
+    },
+    {
+      "id": "SOL56-RULE-021",
+      "exact": [
+        "shit"
+      ],
+      "response": "SHIT"
+    },
+    {
+      "id": "SOL56-RULE-022",
+      "exact": [
+        "69"
+      ],
+      "response": "SIXTY_NINE"
+    },
+    {
+      "id": "SOL56-RULE-023",
+      "exact": [
+        "asshole"
+      ],
+      "response": "ASSHOLE"
+    },
+    {
+      "id": "SOL56-RULE-024",
+      "any": [
+        "claude"
+      ],
+      "response": "CLAUDE"
+    },
+    {
+      "id": "SOL56-RULE-025",
+      "any": [
+        "grok"
+      ],
+      "response": "GROK"
+    },
+    {
+      "id": "SOL56-RULE-026",
+      "any": [
+        "gemini"
+      ],
+      "response": "GEMINI"
     }
   ],
   "fallbacks": [
