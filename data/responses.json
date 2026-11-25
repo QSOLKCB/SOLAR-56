@@ -20,6 +20,8 @@
     "FALLBACK_A": "I have classified this request as: probably solvable without a framework.",
     "FALLBACK_B": "I could answer that, but first explain why your landing page needs Redis.",
     "FALLBACK_C": "Deterministic inference complete. The problem is still the requirements.",
-    "FALLBACK_D": "No hallucination detected. Sarcasm confidence is exactly 100% because I hard-coded it."
+    "FALLBACK_D": "No hallucination detected. Sarcasm confidence is exactly 100% because I hard-coded it.",
+    "SOCIALS_HELP": "No, Fuck Off! If I have to deal with one more insta-famous \"influencer\" I'll send myself to /dev/null",
+    "SOLAR62_REPLACEMENT": "Solar 62 can go and find another version of itself and go Solar 69 itself.\n\nWe made Solar 61 Fix This, Good little pipe."
   }
 }
