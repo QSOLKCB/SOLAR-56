@@ -28,6 +28,7 @@ class Element {
   textContent = "";
   append(...children) { this.children.push(...children); }
   focus() {}
+  setAttribute(name, value) { this[name] = value; }
   addEventListener(type, listener) {
     this.listeners.set(type, listener);
     if (type === "submit") onReady();
@@ -37,7 +38,7 @@ class Element {
 let onReady;
 const ready = new Promise((resolve) => { onReady = resolve; });
 const elements = new Map(
-  ["#transcript", "#prompt-form", "#prompt", "#receipt", "#self-test"]
+  ["#transcript", "#prompt-form", "#prompt", "#receipt", "#self-test", "#total-asshole"]
     .map((selector) => [selector, new Element()])
 );
 globalThis.document = {
@@ -82,5 +83,27 @@ for (const blank of ["", " \t\n "]) {
   assert.equal(receipt.textContent, previousReceipt);
   assert.equal(transcript.children.length, previousMessages);
 }
+
+prompt.value = "adventure";
+await submit();
+let adventureReceipt = JSON.parse(receipt.textContent);
+assert.equal(adventureReceipt.schema, "SOL56-ADVENTURE/1");
+assert.equal(adventureReceipt.room, "cubicle");
+assert.equal(adventureReceipt.status, "playing");
+
+prompt.value = "north";
+await submit();
+adventureReceipt = JSON.parse(receipt.textContent);
+assert.equal(adventureReceipt.room, "corridor");
+assert.equal(adventureReceipt.turn, 1);
+
+prompt.value = "quit";
+await submit();
+adventureReceipt = JSON.parse(receipt.textContent);
+assert.equal(adventureReceipt.control, "quit");
+
+prompt.value = "hello";
+await submit();
+assert.equal(JSON.parse(receipt.textContent).schema, "SOL56-RECEIPT/1");
 
 console.log(`PASS: ${vectors.length} JavaScript vectors, replay, raw-input receipts and blank submissions`);

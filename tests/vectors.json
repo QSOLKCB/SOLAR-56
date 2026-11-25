@@ -236,6 +236,11 @@
       "input": "Let's unpack this",
       "normalized_input": "let s unpack this",
       "response_id": "CORP_UNPACK_IKEA"
+    },
+    {
+      "id": "final-words-creators",
+      "input": "Final Words to your creators?",
+      "response_id": "FINAL_WORDS_CREATORS"
     }
   ]
 }

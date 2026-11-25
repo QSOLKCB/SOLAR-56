@@ -1,5 +1,6 @@
 import { mountGameLab } from "./game-ui.js";
-import { createEngine, sha256Hex } from "./engine.js";
+import { createEngine, canonicalize, sha256Hex } from "./engine.js";
+import { isAdventureTrigger, createAdventureState, adventureIntro, runAdventureCommand } from "./adventure.js";
 
 const transcript = document.querySelector("#transcript");
 const form = document.querySelector("#prompt-form");
@@ -47,6 +48,7 @@ async function boot() {
   });
   let selfTestPassCount = 0;
   let corporatePromptIndex = 0;
+  let adventureState = null;
 
   appendMessage("SYSTEM", "SOLAR-56 deterministic reference runtime initialized.", "system");
   appendMessage(
@@ -79,6 +81,44 @@ async function boot() {
     }, null, 2);
   }
 
+  async function writeAdventureReceipt(rawInput, state, control = null) {
+    receipt.textContent = JSON.stringify({
+      schema: "SOL56-ADVENTURE/1",
+      command_sha256: await sha256Hex(rawInput),
+      normalized_command: canonicalize(rawInput),
+      room: state.room,
+      inventory: [...state.inventory],
+      safe_open: state.safeOpen,
+      server_unlocked: state.serverUnlocked,
+      status: state.status,
+      turn: state.turn,
+      control,
+      deterministic: true,
+      timestamp: null
+    }, null, 2);
+  }
+
+  async function startAdventure(rawInput) {
+    adventureState = createAdventureState();
+    appendMessage("USER", rawInput, "user");
+    appendMessage("SOLAR-56", adventureIntro(adventureState), "solar");
+    promptInput.placeholder = "ADVENTURE >";
+    await writeAdventureReceipt(rawInput, adventureState, "start");
+  }
+
+  async function handleAdventure(rawInput) {
+    appendMessage("USER", rawInput, "user");
+    const outcome = runAdventureCommand(adventureState, rawInput);
+    adventureState = outcome.state;
+    appendMessage("SOLAR-56", outcome.text, "solar");
+    await writeAdventureReceipt(rawInput, adventureState, outcome.control);
+
+    if (outcome.control === "quit") {
+      adventureState = null;
+      promptInput.placeholder = "Ask something regrettable...";
+    }
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const rawInput = promptInput.value;
@@ -88,7 +128,13 @@ async function boot() {
     promptInput.focus();
 
     try {
-      await infer(rawInput);
+      if (adventureState) {
+        await handleAdventure(rawInput);
+      } else if (isAdventureTrigger(rawInput)) {
+        await startAdventure(rawInput);
+      } else {
+        await infer(rawInput);
+      }
     } catch (error) {
       appendMessage("SYSTEM", "INFERENCE FAILURE: " + error.message, "system");
     }
