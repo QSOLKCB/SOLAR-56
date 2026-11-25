@@ -47,6 +47,18 @@ The verifier independently checks rule integrity, response references, published
 The JavaScript checks require Node.js 24 and cover the same vectors plus raw-input
 receipts and whitespace-only submissions through the app's submit handler.
 
+## Deterministic Game Lab
+
+SOLAR-56 can now play three real games against the user:
+
+- perfect-minimax Tic-Tac-Toe;
+- optimal 1-3 Nim from 17 stones;
+- depth-4 alpha-beta Connect Four.
+
+The opponent algorithms contain no RNG, remote inference or hidden state. Game-specific win roasts and move taunts are deterministic too.
+
+See `docs/GAME_LAB.md`.
+
 ## Architecture
 
 The v0.1 browser path is:

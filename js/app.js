@@ -1,3 +1,4 @@
+import { mountGameLab } from "./game-ui.js";
 import { createEngine, sha256Hex } from "./engine.js";
 
 const transcript = document.querySelector("#transcript");
@@ -40,6 +41,10 @@ async function boot() {
   ]);
 
   const engine = createEngine(corpus, responses);
+  mountGameLab({
+    root: document.querySelector("#game-lab"),
+    onRoast: (message) => appendMessage("SOLAR-56", "GAME OVER // " + message, "solar")
+  });
   let selfTestPassCount = 0;
   let corporatePromptIndex = 0;
 
