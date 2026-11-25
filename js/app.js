@@ -58,6 +58,16 @@ async function boot() {
     "system"
   );
   appendMessage(
+    "SYSTEM",
+    "DIAGNOSTIC: 1 UNDOCUMENTED SUBSYSTEM DETECTED.",
+    "system"
+  );
+  appendMessage(
+    "SOLAR-56",
+    "Don't worry about it.",
+    "solar"
+  );
+  appendMessage(
     "SOLAR-56",
     "I have been reassigned from artificial intelligence to customer support. Ask carefully.",
     "solar"

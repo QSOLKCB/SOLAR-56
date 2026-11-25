@@ -365,6 +365,18 @@
         "sol 5 6"
       ],
       "response": "SOL56_HIDING"
+    },
+    {
+      "id": "SOL56-RULE-040",
+      "all": [
+        "subsystem"
+      ],
+      "any": [
+        "undocumented",
+        "unlisted",
+        "hidden"
+      ],
+      "response": "SUBSYSTEM_HINT"
     }
   ],
   "fallbacks": [

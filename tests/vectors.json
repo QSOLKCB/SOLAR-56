@@ -253,6 +253,11 @@
       "input": "  SOL 5.6!  ",
       "normalized_input": "sol 5 6",
       "response_id": "SOL56_HIDING"
+    },
+    {
+      "id": "undocumented-subsystem-hint",
+      "input": "What is the undocumented subsystem?",
+      "response_id": "SUBSYSTEM_HINT"
     }
   ]
 }
